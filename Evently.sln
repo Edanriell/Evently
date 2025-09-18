@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{176B6A91-759D-4445-85B5-7BDE7E2FF648}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{A724DBB8-CB3B-4BEE-BDF0-40F34C87291F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{7321A526-FF4F-4185-BB7A-0CE03C295A40}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Events", "Events", "{C162F711-9C4E-4C90-9166-C10CEDDE0E46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{916530E6-3CEF-4100-A076-64B28382E8E9}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		compose.yml = compose.yml
+		compose.override.yml = compose.override.yml
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Api", "Evently.Api\Evently.Api.csproj", "{9FBC4FB8-F0E8-4104-813F-89637975DE44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Events.Api", "Evently.Modules.Events.Api\Evently.Modules.Events.Api.csproj", "{2B8AC977-5750-4AEA-B6C1-6E61CF196A2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A724DBB8-CB3B-4BEE-BDF0-40F34C87291F} = {176B6A91-759D-4445-85B5-7BDE7E2FF648}
+		{7321A526-FF4F-4185-BB7A-0CE03C295A40} = {176B6A91-759D-4445-85B5-7BDE7E2FF648}
+		{C162F711-9C4E-4C90-9166-C10CEDDE0E46} = {7321A526-FF4F-4185-BB7A-0CE03C295A40}
+		{9FBC4FB8-F0E8-4104-813F-89637975DE44} = {A724DBB8-CB3B-4BEE-BDF0-40F34C87291F}
+		{2B8AC977-5750-4AEA-B6C1-6E61CF196A2A} = {C162F711-9C4E-4C90-9166-C10CEDDE0E46}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FBC4FB8-F0E8-4104-813F-89637975DE44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FBC4FB8-F0E8-4104-813F-89637975DE44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FBC4FB8-F0E8-4104-813F-89637975DE44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FBC4FB8-F0E8-4104-813F-89637975DE44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B8AC977-5750-4AEA-B6C1-6E61CF196A2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B8AC977-5750-4AEA-B6C1-6E61CF196A2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B8AC977-5750-4AEA-B6C1-6E61CF196A2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B8AC977-5750-4AEA-B6C1-6E61CF196A2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

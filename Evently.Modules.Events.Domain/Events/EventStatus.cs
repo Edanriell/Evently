@@ -1,4 +1,4 @@
-﻿namespace Evently.Modules.Events.Api.Events;
+﻿namespace Evently.Modules.Events.Domain.Events;
 
 public enum EventStatus
 {
@@ -7,3 +7,4 @@ public enum EventStatus
 	Completed = 2,
 	Canceled = 3
 }
+ 

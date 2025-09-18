@@ -1,4 +1,4 @@
-﻿{
+{
 	"profiles": {
 		"http": {
 			"commandName": "Project",
@@ -49,4 +49,4 @@
 			"sslPort": 5001
 		}
 	}
-} 
+}

@@ -1,5 +1,5 @@
-﻿using Evently.Modules.Events.Application.Abstractions.Messaging;
+﻿using Evently.Common.Application.Messaging;
 
 namespace Evently.Modules.Events.Application.Events.GetEvents;
 
-public sealed record GetEventsQuery : IQuery<IReadOnlyCollection<EventResponse>>; 
+public sealed record GetEventsQuery : IQuery<IReadOnlyCollection<EventResponse>>;

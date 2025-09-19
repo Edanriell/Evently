@@ -7,8 +7,8 @@ namespace Evently.Modules.Events.Infrastructure.Events;
 
 internal sealed class EventConfiguration : IEntityTypeConfiguration<Event>
 {
-    public void Configure(EntityTypeBuilder<Event> builder)
-    {
-        builder.HasOne<Category>().WithMany();
-    } 
+	public void Configure(EntityTypeBuilder<Event> builder)
+	{
+		builder.HasOne<Category>().WithMany();
+	}
 }

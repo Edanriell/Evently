@@ -1,5 +1,5 @@
-﻿using Evently.Modules.Events.Application.Abstractions.Messaging;
+﻿using Evently.Common.Application.Messaging;
 
 namespace Evently.Modules.Events.Application.Categories.CreateCategory;
 
-public sealed record CreateCategoryCommand(string Name) : ICommand<Guid>; 
+public sealed record CreateCategoryCommand(string Name) : ICommand<Guid>;

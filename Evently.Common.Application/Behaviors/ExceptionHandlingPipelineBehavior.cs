@@ -15,7 +15,7 @@ internal sealed class ExceptionHandlingPipelineBehavior<TRequest, TResponse>(
 		CancellationToken cancellationToken)
 	{
 		try
-		{
+		{ 
 			return await next(cancellationToken);
 		}
 		catch (Exception exception)

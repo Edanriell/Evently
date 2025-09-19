@@ -8,12 +8,12 @@ namespace Evently.Modules.Events.Infrastructure.Database.Migrations
 {
     /// <inheritdoc />
     public partial class Create_Database : Migration
-    {   
+    {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.EnsureSchema(
-                name: "events");
+                name: "events");   
 
             migrationBuilder.CreateTable(
                 name: "categories",

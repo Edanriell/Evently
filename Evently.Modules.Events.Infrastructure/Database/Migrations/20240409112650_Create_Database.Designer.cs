@@ -17,9 +17,9 @@ namespace Evently.Modules.Events.Infrastructure.Database.Migrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
-        {     
+        {
 #pragma warning disable 612, 618
-            modelBuilder
+            modelBuilder   
                 .HasDefaultSchema("events")
                 .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);

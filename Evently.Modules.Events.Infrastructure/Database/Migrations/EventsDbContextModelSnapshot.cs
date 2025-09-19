@@ -14,7 +14,7 @@ namespace Evently.Modules.Events.Infrastructure.Database.Migrations
     partial class EventsDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
-        {   
+        {  
 #pragma warning disable 612, 618
             modelBuilder
                 .HasDefaultSchema("events")

@@ -10,7 +10,7 @@ internal static class MigrationExtensions
 		using IServiceScope scope = app.ApplicationServices.CreateScope();
 
 		ApplyMigration<EventsDbContext>(scope);
-	} 
+	}
 
 	private static void ApplyMigration<TDbContext>(IServiceScope scope)
 		where TDbContext : DbContext

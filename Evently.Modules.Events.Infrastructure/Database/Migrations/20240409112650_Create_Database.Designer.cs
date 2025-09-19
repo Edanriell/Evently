@@ -14,10 +14,10 @@ namespace Evently.Modules.Events.Infrastructure.Database.Migrations
     [DbContext(typeof(EventsDbContext))]
     [Migration("20240409112650_Create_Database")]
     partial class Create_Database
-    { 
+    {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
-        {
+        { 
 #pragma warning disable 612, 618
             modelBuilder
                 .HasDefaultSchema("events")

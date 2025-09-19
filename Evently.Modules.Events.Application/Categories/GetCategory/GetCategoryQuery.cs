@@ -1,5 +1,5 @@
-﻿using Evently.Modules.Events.Application.Abstractions.Messaging;
+﻿using Evently.Common.Application.Messaging;
 
 namespace Evently.Modules.Events.Application.Categories.GetCategory;
 
-public sealed record GetCategoryQuery(Guid CategoryId) : IQuery<CategoryResponse>; 
+public sealed record GetCategoryQuery(Guid CategoryId) : IQuery<CategoryResponse>;

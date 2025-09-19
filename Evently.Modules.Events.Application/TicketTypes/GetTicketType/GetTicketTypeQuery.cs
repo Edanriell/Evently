@@ -1,5 +1,5 @@
-﻿using Evently.Modules.Events.Application.Abstractions.Messaging;
+﻿using Evently.Common.Application.Messaging;
 
 namespace Evently.Modules.Events.Application.TicketTypes.GetTicketType;
 
-public sealed record GetTicketTypeQuery(Guid TicketTypeId) : IQuery<TicketTypeResponse>; 
+public sealed record GetTicketTypeQuery(Guid TicketTypeId) : IQuery<TicketTypeResponse>;

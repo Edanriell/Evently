@@ -7,14 +7,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
- 
+
 namespace Evently.Modules.Users.Infrastructure.Database.Migrations
-{ 
+{
     [DbContext(typeof(UsersDbContext))]
     partial class UsersDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
-        {
+        { 
 #pragma warning disable 612, 618
             modelBuilder
                 .HasDefaultSchema("users")

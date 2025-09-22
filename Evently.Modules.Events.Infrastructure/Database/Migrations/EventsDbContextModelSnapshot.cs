@@ -14,13 +14,13 @@ namespace Evently.Modules.Events.Infrastructure.Database.Migrations
     partial class EventsDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
-        {  
+        {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasDefaultSchema("events")
                 .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
-
+  
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("Evently.Modules.Events.Domain.Categories.Category", b =>

@@ -10,11 +10,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 #nullable disable
 
 namespace Evently.Modules.Users.Infrastructure.Database.Migrations
-{  
+{
     [DbContext(typeof(UsersDbContext))]
     [Migration("20240411134449_Create_Database")]
     partial class Create_Database
-    {
+    { 
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

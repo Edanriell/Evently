@@ -5,8 +5,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 #nullable disable
 
 namespace Evently.Modules.Users.Infrastructure.Database.Migrations
-{ 
-    /// <inheritdoc />
+{
+    /// <inheritdoc /> 
     public partial class Create_Database : Migration
     {
         /// <inheritdoc />

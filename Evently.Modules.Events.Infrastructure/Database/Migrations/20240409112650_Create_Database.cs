@@ -13,8 +13,8 @@ namespace Evently.Modules.Events.Infrastructure.Database.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.EnsureSchema(
-                name: "events");   
-
+                name: "events");
+ 
             migrationBuilder.CreateTable(
                 name: "categories",
                 schema: "events",

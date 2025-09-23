@@ -3,7 +3,6 @@ using Evently.Api.Middleware;
 using Evently.Common.Application;
 using Evently.Common.Infrastructure;
 using Evently.Common.Presentation.Endpoints;
-using Evently.Modules.Events.Application;
 using Evently.Modules.Events.Infrastructure;
 using Evently.Modules.Ticketing.Infrastructure;
 using Evently.Modules.Users.Infrastructure;
@@ -21,27 +20,27 @@ builder.Services.AddProblemDetails();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
-	options.CustomSchemaIds(t => t.FullName?.Replace("+", "."));
+    options.CustomSchemaIds(t => t.FullName?.Replace("+", "."));
 });
 
 builder.Services.AddApplication([
-	AssemblyReference.Assembly,
-	Evently.Modules.Users.Application.AssemblyReference.Assembly,
-	Evently.Modules.Ticketing.Application.AssemblyReference.Assembly
-]);
+    Evently.Modules.Events.Application.AssemblyReference.Assembly,
+    Evently.Modules.Users.Application.AssemblyReference.Assembly,
+    Evently.Modules.Ticketing.Application.AssemblyReference.Assembly]);
 
 string databaseConnectionString = builder.Configuration.GetConnectionString("Database")!;
 string redisConnectionString = builder.Configuration.GetConnectionString("Cache")!;
 
 builder.Services.AddInfrastructure(
-	databaseConnectionString,
-	redisConnectionString);
+    [TicketingModule.ConfigureConsumers],
+    databaseConnectionString,
+    redisConnectionString);
 
 builder.Configuration.AddModuleConfiguration(["events", "users", "ticketing"]);
 
 builder.Services.AddHealthChecks()
-	.AddNpgSql(databaseConnectionString)
-	.AddRedis(redisConnectionString);
+    .AddNpgSql(databaseConnectionString)
+    .AddRedis(redisConnectionString);
 
 builder.Services.AddEventsModule(builder.Configuration);
 builder.Services.AddUsersModule(builder.Configuration);
@@ -51,21 +50,21 @@ WebApplication app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-	app.UseSwagger();
-	app.UseSwaggerUI();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 
-	app.ApplyMigrations();
+    app.ApplyMigrations();
 }
 
 app.MapEndpoints();
 
 app.MapHealthChecks("health", new HealthCheckOptions
 {
-	ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
 });
 
 app.UseSerilogRequestLogging();
 
 app.UseExceptionHandler();
 
-await app.RunAsync();
+app.Run();

@@ -25,7 +25,7 @@ namespace Evently.Modules.Events.Infrastructure.Database.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-   
+
             modelBuilder.Entity("Evently.Modules.Events.Domain.Categories.Category", b =>
                 {
                     b.Property<Guid>("Id")

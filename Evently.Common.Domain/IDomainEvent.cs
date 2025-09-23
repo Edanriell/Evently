@@ -4,7 +4,7 @@ namespace Evently.Common.Domain;
 
 public interface IDomainEvent : INotification
 {
-	Guid Id { get; }
+    Guid Id { get; }
 
-	DateTime OccurredOnUtc { get; }
+    DateTime OccurredOnUtc { get; }
 }

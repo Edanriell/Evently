@@ -4,46 +4,46 @@ namespace Evently.Modules.Events.Domain.Categories;
 
 public sealed class Category : Entity
 {
-	private Category()
-	{
-	}
+    private Category()
+    {
+    }
 
-	public Guid Id { get; private set; }
+    public Guid Id { get; private set; }
 
-	public string Name { get; private set; }
+    public string Name { get; private set; }
 
-	public bool IsArchived { get; private set; }
+    public bool IsArchived { get; private set; }
 
-	public static Category Create(string name)
-	{
-		var category = new Category
-		{
-			Id = Guid.NewGuid(),
-			Name = name,
-			IsArchived = false
-		};
+    public static Category Create(string name)
+    {
+        var category = new Category
+        {
+            Id = Guid.NewGuid(),
+            Name = name,
+            IsArchived = false
+        };
 
-		category.Raise(new CategoryCreatedDomainEvent(category.Id));
+        category.Raise(new CategoryCreatedDomainEvent(category.Id));
 
-		return category;
-	}
+        return category;
+    }
 
-	public void Archive()
-	{
-		IsArchived = true;
+    public void Archive()
+    {
+        IsArchived = true;
 
-		Raise(new CategoryArchivedDomainEvent(Id));
-	}
+        Raise(new CategoryArchivedDomainEvent(Id));
+    }
 
-	public void ChangeName(string name)
-	{
-		if (Name == name)
-		{
-			return;
-		}
+    public void ChangeName(string name)
+    {
+        if (Name == name)
+        {
+            return;
+        }
 
-		Name = name;
+        Name = name;
 
-		Raise(new CategoryNameChangedDomainEvent(Id, Name));
-	}
+        Raise(new CategoryNameChangedDomainEvent(Id, Name));
+    }
 }

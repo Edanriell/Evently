@@ -20,7 +20,7 @@ namespace Evently.Modules.Events.Infrastructure.Database.Migrations
                 .HasDefaultSchema("events")
                 .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
-  
+
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("Evently.Modules.Events.Domain.Categories.Category", b =>

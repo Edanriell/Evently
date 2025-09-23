@@ -2,7 +2,7 @@
 
 public interface ICategoryRepository
 {
-	Task<Category?> GetAsync(Guid id, CancellationToken cancellationToken = default);
+    Task<Category?> GetAsync(Guid id, CancellationToken cancellationToken = default);
 
-	void Insert(Category category);
+    void Insert(Category category);
 }

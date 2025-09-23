@@ -11,14 +11,14 @@ namespace Evently.Modules.Events.Presentation.Events;
 
 internal sealed class CancelEvent : IEndpoint
 {
-	public void MapEndpoint(IEndpointRouteBuilder app)
-	{
-		app.MapDelete("events/{id}/cancel", async (Guid id, ISender sender) =>
-			{
-				Result result = await sender.Send(new CancelEventCommand(id));
+    public void MapEndpoint(IEndpointRouteBuilder app)
+    {
+        app.MapDelete("events/{id}/cancel", async (Guid id, ISender sender) =>
+        {
+            Result result = await sender.Send(new CancelEventCommand(id));
 
-				return result.Match(Results.NoContent, ApiResults.Problem);
-			})
-			.WithTags(Tags.Events);
-	}
+            return result.Match(Results.NoContent, ApiResults.Problem);
+        })
+        .WithTags(Tags.Events);
+    }
 }

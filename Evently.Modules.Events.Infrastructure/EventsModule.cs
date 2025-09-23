@@ -7,10 +7,7 @@ using Evently.Modules.Events.Domain.TicketTypes;
 using Evently.Modules.Events.Infrastructure.Categories;
 using Evently.Modules.Events.Infrastructure.Database;
 using Evently.Modules.Events.Infrastructure.Events;
-using Evently.Modules.Events.Infrastructure.PublicApi;
 using Evently.Modules.Events.Infrastructure.TicketTypes;
-using Evently.Modules.Events.Presentation;
-using Evently.Modules.Events.PublicApi;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.Extensions.Configuration;
@@ -20,36 +17,34 @@ namespace Evently.Modules.Events.Infrastructure;
 
 public static class EventsModule
 {
-	public static IServiceCollection AddEventsModule(
-		this IServiceCollection services,
-		IConfiguration configuration)
-	{
-		services.AddEndpoints(AssemblyReference.Assembly);
+    public static IServiceCollection AddEventsModule(
+        this IServiceCollection services,
+        IConfiguration configuration)
+    {
+        services.AddEndpoints(Presentation.AssemblyReference.Assembly);
 
-		services.AddInfrastructure(configuration);
+        services.AddInfrastructure(configuration);
 
-		return services;
-	}
+        return services;
+    }
 
-	private static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
-	{
-		string databaseConnectionString = configuration.GetConnectionString("Database")!;
+    private static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+    {
+        string databaseConnectionString = configuration.GetConnectionString("Database")!;
 
-		services.AddDbContext<EventsDbContext>((sp, options) =>
-			options
-				.UseNpgsql(
-					databaseConnectionString,
-					npgsqlOptions => npgsqlOptions
-						.MigrationsHistoryTable(HistoryRepository.DefaultTableName, Schemas.Events))
-				.UseSnakeCaseNamingConvention()
-				.AddInterceptors(sp.GetRequiredService<PublishDomainEventsInterceptor>()));
+        services.AddDbContext<EventsDbContext>((sp, options) =>
+            options
+                .UseNpgsql(
+                    databaseConnectionString,
+                    npgsqlOptions => npgsqlOptions
+                        .MigrationsHistoryTable(HistoryRepository.DefaultTableName, Schemas.Events))
+                .UseSnakeCaseNamingConvention()
+                .AddInterceptors(sp.GetRequiredService<PublishDomainEventsInterceptor>()));
 
-		services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<EventsDbContext>());
+        services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<EventsDbContext>());
 
-		services.AddScoped<IEventRepository, EventRepository>();
-		services.AddScoped<ITicketTypeRepository, TicketTypeRepository>();
-		services.AddScoped<ICategoryRepository, CategoryRepository>();
-
-		services.AddScoped<IEventsApi, EventsApi>();
-	}
+        services.AddScoped<IEventRepository, EventRepository>();
+        services.AddScoped<ITicketTypeRepository, TicketTypeRepository>();
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
+    }
 }

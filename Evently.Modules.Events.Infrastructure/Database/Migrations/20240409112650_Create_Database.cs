@@ -14,7 +14,7 @@ namespace Evently.Modules.Events.Infrastructure.Database.Migrations
         {
             migrationBuilder.EnsureSchema(
                 name: "events");
- 
+
             migrationBuilder.CreateTable(
                 name: "categories",
                 schema: "events",

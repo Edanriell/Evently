@@ -109,6 +109,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Ticketing.I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Users.IntegrationTests", "Evently.Modules.Users.IntegrationTests\Evently.Modules.Users.IntegrationTests.csproj", "{E85BCC17-0459-498E-9D79-7EA8D8C2D334}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Gateway", "Evently.Gateway\Evently.Gateway.csproj", "{C7A8FF6D-97A2-4218-A33E-EAD1F3BC47D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -163,6 +165,7 @@ Global
 		{BF49C587-B359-4AEA-AE00-0CFD123501A6} = {C162F711-9C4E-4C90-9166-C10CEDDE0E46}
 		{DD5D20CD-7BB2-494E-AF3D-938BDACA76F6} = {70B91F18-BAD2-48E1-B9BE-48FF4FF26BC5}
 		{E85BCC17-0459-498E-9D79-7EA8D8C2D334} = {09F35542-F8E7-4E0F-8680-FD97D9932322}
+		{C7A8FF6D-97A2-4218-A33E-EAD1F3BC47D8} = {A724DBB8-CB3B-4BEE-BDF0-40F34C87291F}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9FBC4FB8-F0E8-4104-813F-89637975DE44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -329,5 +332,9 @@ Global
 		{E85BCC17-0459-498E-9D79-7EA8D8C2D334}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E85BCC17-0459-498E-9D79-7EA8D8C2D334}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E85BCC17-0459-498E-9D79-7EA8D8C2D334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7A8FF6D-97A2-4218-A33E-EAD1F3BC47D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7A8FF6D-97A2-4218-A33E-EAD1F3BC47D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7A8FF6D-97A2-4218-A33E-EAD1F3BC47D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7A8FF6D-97A2-4218-A33E-EAD1F3BC47D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
